@@ -1,9 +1,8 @@
-.navigate{
-  
+.navigate {
   background-color: var(--black, #232536);
 }
 
-.nav_title{
+.nav_title {
   color: var(--light, #fff);
   font-family: Inter;
   font-size: 16px;
@@ -12,7 +11,7 @@
   line-height: 28px;
 }
 
-.nav_button{
+.nav_button {
   color: var(--black, #232536);
   font-family: Sen;
   font-size: 18px;
@@ -21,9 +20,7 @@
   line-height: 24px;
 }
 
-
 header {
-
   nav {
     display: flex;
     justify-content: space-between;
@@ -35,16 +32,10 @@ header {
       gap: 20px;
       a {
         text-decoration: none;
-      
-
-        
       }
       button {
-        
-          padding: 15px 48px;
-          margin-left: 63px;
-        
-       
+        padding: 15px 48px;
+        margin-left: 63px;
       }
     }
   }
@@ -77,15 +68,15 @@ footer {
   }
 }
 
-@media (max-width:768px){
-  .footer_card{
+@media (max-width: 768px) {
+  .footer_card {
     justify-content: center;
     flex-direction: column;
 
-    .footer_desc{
+    .footer_desc {
       margin: 0 auto;
     }
-    ul{
+    ul {
       margin: 0 auto;
       padding: 0;
     }

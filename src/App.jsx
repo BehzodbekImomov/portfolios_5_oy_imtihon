@@ -20,45 +20,41 @@ import { AuthContex } from "./context/AuthContex";
 import CategoriyesP from "./pages/User/CategoriyesP";
 import AllPost from "./pages/User/AllPost";
 
-
-
 function App() {
-
-  let {isAuthenticated} = useContext(AuthContex);
+  let { isAuthenticated } = useContext(AuthContex);
 
   return (
-   
     <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<FrontLayout />}>
-        <Route index element={<HomeP />} />
-        <Route path="about" element={<Aboutp />} />
-        <Route path="login" element={<LoginP />} />
-        <Route path="register" element={<RegistrP />} />
-        <Route path="all-posts" element={<AllPost />} />
-        <Route path="posts" element={<PostsP />} />
-        <Route path="category" element={<CategoriyesP />} />
-        <Route path="post/:id" element={<PostP />} />
+      <Routes>
+        <Route path="/" element={<FrontLayout />}>
+          <Route index element={<HomeP />} />
+          <Route path="about" element={<Aboutp />} />
+          <Route path="login" element={<LoginP />} />
+          <Route path="register" element={<RegistrP />} />
+          <Route path="all-posts" element={<AllPost />} />
+          <Route path="posts" element={<PostsP />} />
+          <Route path="category" element={<CategoriyesP />} />
+          <Route path="post/:id" element={<PostP />} />
+          {isAuthenticated && (
+            <Fragment>
+              <Route path="my-posts" element={<MyPostsP />} />
+              <Route path="account" element={<AccountP />} />
+            </Fragment>
+          )}
+        </Route>
         {isAuthenticated && (
           <Fragment>
-            <Route path="my-posts" element={<MyPostsP />} />
-            <Route path="account" element={<AccountP />} />
+            <Route path="/" element={<AdminLayout />}>
+              <Route path="dashboard" element={<DashboardP />} />
+              <Route path="users" element={<UsersP />} />
+              <Route path="categories" element={<CategoryP />} />
+            </Route>
           </Fragment>
         )}
-      </Route>
-      {isAuthenticated && (
-        <Fragment>
-          <Route path="/" element={<AdminLayout />}>
-            <Route path="dashboard" element={<DashboardP />} />
-            <Route path="users" element={<UsersP />} />
-            <Route path="categories" element={<CategoryP />} />
-          </Route>
-        </Fragment>
-      )}
-      <Route path="*" element={<NotFoundP />} />
-    </Routes>
-  </BrowserRouter>
-  )
+        <Route path="*" element={<NotFoundP />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

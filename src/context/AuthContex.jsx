@@ -7,8 +7,8 @@ import { TOKEN } from "../constants";
 export const AuthContex = createContext();
 
 const AuthContexProvider = ({ children }) => {
-  const token=Cookies.get(TOKEN)
-  const [isAuthenticated, setIsAuthenticated] = useState(token?true:false);
+  const token = Cookies.get(TOKEN);
+  const [isAuthenticated, setIsAuthenticated] = useState(token ? true : false);
 
   let state = {
     isAuthenticated,
