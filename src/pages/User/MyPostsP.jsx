@@ -26,6 +26,7 @@ const getPosts = useCallback(async () => {
     );
     let { data: totalData } = await request(`post/user?search=${search}`);
     setPosts(data.data);
+    console.log(data);
     setTotal(totalData.data.length);
   } catch (err) {
     toast.error(err.message);
@@ -67,7 +68,7 @@ let pagination = total > limit && <Pagination>{items}</Pagination>;
 
 
 
-
+console.log(posts);
 
   return (
     <Container>
