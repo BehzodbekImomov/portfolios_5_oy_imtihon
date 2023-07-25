@@ -6,29 +6,33 @@ import { AuthContex } from "../../context/AuthContex";
 import "./main.scss";
 
 const Header = () => {
-  const {isAuthenticated}=useContext(AuthContex)
+  const { isAuthenticated } = useContext(AuthContex);
 
   return (
     <header>
       <Navbar expand="md" className="pt-4 pb-4  navigate">
-        <Container >
+        <Container>
           <Navbar.Brand href="#">
-           
-              {isAuthenticated ? (
-             <Link to="/my-posts"> <h2 style={{padding:0,color:"#fff",margin:0}} >My Blogs</h2></Link>
-              ) : ( <Link >
+            {isAuthenticated ? (
+              <Link to="/my-posts">
+                {" "}
+                <h2 style={{ padding: 0, color: "#fff", margin: 0 }}>
+                  My Blogs
+                </h2>
+              </Link>
+            ) : (
+              <Link>
                 <img src="/navLogo.svg" alt="" />
-                </Link>
-              )}
-           
+              </Link>
+            )}
           </Navbar.Brand>
           <Navbar.Toggle
             className="bg bg-light"
-            aria-controls={`offcanvasNavbar-expand-md`}
+            // aria-controls={`offcanvasNavbar-expand-md`}
           />
           <Navbar.Offcanvas
             className="bg-secondary"
-            aria-labelledby={`offcanvasNavbarLabel-expand-md`}
+            // aria-labelledby={`offcanvasNavbarLabel-expand-md`}
             placement="end"
           >
             <Offcanvas.Header closeButton>
@@ -71,7 +75,6 @@ const Header = () => {
                         Login
                       </Link>
                     ) : (
-                      
                       "Account"
                     )}
                   </Button>{" "}
