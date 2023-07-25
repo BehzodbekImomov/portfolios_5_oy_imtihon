@@ -1,5 +1,6 @@
 import { Fragment, useContext } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { AuthContex } from "./context/AuthContex";
 
 import FrontLayout from "./components/layout/FrontLayout";
 import AdminLayout from "./components/layout/AdminLayout";
@@ -16,7 +17,6 @@ import DashboardP from "./pages/Admin/DashboardP";
 import UsersP from "./pages/Admin/UsersP";
 import CategoryP from "./pages/Admin/CategoryP";
 import NotFoundP from "./pages/NotFoundP";
-import { AuthContex } from "./context/AuthContex";
 import CategoriyesP from "./pages/User/CategoriyesP";
 import AllPost from "./pages/User/AllPost";
 

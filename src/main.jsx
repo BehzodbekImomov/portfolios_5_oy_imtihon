@@ -1,7 +1,6 @@
 import { ToastContainer } from "react-toastify";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import AuthContexProvider from "./context/AuthContex.jsx";
 
 import App from "./App.jsx";
 
@@ -15,6 +14,7 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import AuthContexProvider from "./context/AuthContex.jsx";
 
 import "./index.css";
 

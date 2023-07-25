@@ -20,7 +20,6 @@ const Hero = () => {
   useEffect(() => {
     getData();
   }, [getData]);
-  console.log(lates);
   return (
     <div className="hero container1 fluid">
         <div className="hero_content ">
