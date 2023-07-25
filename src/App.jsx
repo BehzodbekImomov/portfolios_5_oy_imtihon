@@ -9,7 +9,6 @@ import HomeP from "./pages/User/HomeP";
 import Aboutp from "./pages/User/Aboutp";
 import LoginP from "./pages/User/LoginP";
 import RegistrP from "./pages/User/RegisterP";
-import PostsP from "./pages/User/PostsP";
 import PostP from "./pages/User/PostP";
 import MyPostsP from "./pages/User/MyPostsP";
 import AccountP from "./pages/User/AccountP";
@@ -32,7 +31,6 @@ function App() {
           <Route path="login" element={<LoginP />} />
           <Route path="register" element={<RegistrP />} />
           <Route path="all-posts" element={<AllPost />} />
-          <Route path="posts" element={<PostsP />} />
           <Route path="category" element={<CategoriyesP />} />
           <Route path="post/:id" element={<PostP />} />
           {isAuthenticated && (
