@@ -11,7 +11,6 @@ const PopularBlog = () => {
     try {
       let { data } = await request("post/lastones");
       setBlog(data);
-      console.log(data);
     } catch (err) {
       toast.error(err.message);
     }
@@ -35,27 +34,17 @@ const PopularBlog = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
-        }
+          dots: true,
+        },
       },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 1
-        }
-      },
-      
-    ]
+     
+    ],
   };
   return (
     <div className="container">
-<div className="d-flex align-items-center pt-5 justify-content-between">
-
-      <h2 className="p-0">Popular blogs</h2>
-     
-</div>
+      <div className="d-flex align-items-center pt-5 justify-content-between">
+        <h2 className="p-0">Popular blogs</h2>
+      </div>
       <ul className="contentCard g-flex gap-5">
         <Slider {...settings}>
           {blog.map((b) => (

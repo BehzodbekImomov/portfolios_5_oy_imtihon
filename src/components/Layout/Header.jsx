@@ -1,5 +1,9 @@
 import { useContext } from "react";
-import { Button, Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link } from "react-router-dom";
 import { AuthContex } from "../../context/AuthContex";
 
@@ -12,7 +16,7 @@ const Header = () => {
     <header>
       <Navbar expand="md" className="pt-4 pb-4  navigate">
         <Container>
-          <Navbar.Brand href="#">
+          <Navbar.Brand>
             {isAuthenticated ? (
               <Link to="/my-posts">
                 {" "}
@@ -28,57 +32,37 @@ const Header = () => {
           </Navbar.Brand>
           <Navbar.Toggle
             className="bg bg-light"
-            // aria-controls={`offcanvasNavbar-expand-md`}
+            aria-controls={`offcanvasNavbar-expand-md`}
           />
           <Navbar.Offcanvas
             className="bg-secondary"
-            // aria-labelledby={`offcanvasNavbarLabel-expand-md`}
+            aria-labelledby={`offcanvasNavbarLabel-expand-md`}
             placement="end"
           >
-            <Offcanvas.Header closeButton>
-              <Offcanvas.Title id={`offcanvasNavbarLabel-expand-md`}>
-                <Link></Link>
-              </Offcanvas.Title>
-            </Offcanvas.Header>
+            <Offcanvas.Header closeButton></Offcanvas.Header>
             <Offcanvas.Body>
-              <Nav className="justify-content-end align-items-center flex-grow-1 gap-3 pe-3">
-                <Nav.Link href="#action1">
-                  {" "}
-                  <Link className="nav_title" to="/">
-                    Home
-                  </Link>
-                </Nav.Link>
-                <Nav.Link href="#action2">
-                  {" "}
-                  <Link className="nav_title" to="/all-posts">
-                    Posts
-                  </Link>
-                </Nav.Link>
-                <Nav.Link href="#action2">
-                  {" "}
-                  <Link className="nav_title" to="/about">
-                    About Us
-                  </Link>
-                </Nav.Link>
-                <Nav.Link href="#action2">
-                  {" "}
-                  <Link className="nav_title" to="/register">
-                    Register
-                  </Link>
-                </Nav.Link>
-                <Nav.Link href="#action2">
-                  {" "}
-                  <Button variant="light" className="nav_button">
-                    {" "}
-                    {!isAuthenticated ? (
-                      <Link className="btn " to="login">
-                        Login
-                      </Link>
-                    ) : (
-                      "Account"
-                    )}
-                  </Button>{" "}
-                </Nav.Link>
+              <Nav className="justify-content-end align-items-center flex-grow-1 gap-5 pe-3">
+                <Link className="nav_title" to="/">
+                  Home
+                </Link>
+                <Link className="nav_title" to="/all-posts">
+                  Posts
+                </Link>
+                <Link className="nav_title" to="/about">
+                  About Us
+                </Link>
+                <Link className="nav_title" to="/register">
+                  Register
+                </Link>
+                <Button variant="light" className="nav_button">
+                  {!isAuthenticated ? (
+                    <Link className="btn " to="/login">
+                      Login
+                    </Link>
+                  ) : (
+                    <Link>Account</Link>
+                  )}
+                </Button>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>

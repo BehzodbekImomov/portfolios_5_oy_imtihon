@@ -87,3 +87,13 @@ background: var(--yellow, #FFD050);
         }
     }
 }
+
+@media (max-width:1024px){
+    .hero{
+        .hero_content{
+            h1{
+                font-size: 30px;
+            }
+        }
+    }
+}
